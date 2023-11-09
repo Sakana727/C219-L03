@@ -1,0 +1,262 @@
+ul.navbar {
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #e46767;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 130px;
+  opacity: 80%;
+  z-index: 2;
+  justify-content: center;
+}
+
+ul.navbar li {
+  float: right;
+  align-content: center;
+  padding-top: 16px;
+  padding-right: 26px;
+  justify-content: center;
+}
+
+ul.navbar li a {
+  flex: content;
+  display: block;
+  color: white;
+  font-size: 20px;
+  padding: 14px 19px;
+  text-decoration: none;
+
+}
+
+ul.navbar li a.active {
+  background-color: #cca0a0;
+  color: rgb(128, 14, 14);
+}
+
+ul.navbar li a:hover:not(.active) {
+  background-color: #cca0a0;
+}
+
+
+.logo {
+  float: left !important;
+  padding-bottom: 13px;
+  box-sizing: content-box;
+  max-width: 100%;
+  max-height: 100%;
+  scale: 1.5;
+}
+
+.logo :hover {
+  transform: scale(1.1);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  z-index: 7;
+}
+
+.dropdown-content {
+  display: none;
+  position: fixed;
+  background-color: #e46767;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 99;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  z-index: 7;
+}
+
+.dropdown a.active {
+  background-color: #0078d4;
+  color: white;
+  font-weight: bold;
+  z-index: 7;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 10;
+  padding: 100px 0px;
+  background-color: #f5f5f5;
+}
+
+.contact-section {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 40px;
+}
+
+.contact-info,
+.contact-form {
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info p {
+  font-size: 1.1rem;
+}
+
+.contact-form form {
+  text-align: left;
+}
+
+.contact-form label {
+  font-size: 1.1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  background-color: #0078d4;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #004a94;
+}
+
+/* Add these CSS animations */
+.contact-section {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 40px;
+}
+
+.contact-info,
+.contact-form {
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.contact-info p {
+  font-size: 1.1rem;
+}
+
+.contact-form form {
+  text-align: left;
+}
+
+.contact-form label {
+  font-size: 1.1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #e46767;
+}
+
+.contact-form button {
+  background-color: #e46767;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #e46767;
+}
+
+.contact-form:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  background-color: #e46767;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.footer-logo {
+  flex: 1;
+  max-width: 200px;
+}
+
+.footer-logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+.footer-contact,
+.footer-social {
+  flex: 1;
+  text-align: left;
+}
+
+.footer-contact h3,
+.footer-social h3 {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+
+.footer-social ul li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-social ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-copyright {
+  font-size: 0.9rem;
+  border-top: 2px solid #ffffff;
+  margin-top: 20px;
+  padding-top: 10px;
+}
