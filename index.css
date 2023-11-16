@@ -134,6 +134,11 @@ body {
 video {
     width: 120%;
     height: 120%;
+
+}
+
+#background-image {
+    display: none;
 }
 
 section {
@@ -243,6 +248,14 @@ footer {
         position: relative;
         height: max-content;
         z-index: -1;
+    }
+
+    #background-video {
+        display: none;
+    }
+
+    #background-image {
+        display: contents;
     }
 
     .dropdown {

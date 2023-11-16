@@ -107,15 +107,38 @@
       toggleNavbar();
 
       window.addEventListener("resize", toggleNavbar);
+
+      function handleViewportChange() {
+        const video = document.getElementById("background-video");
+        const image = document.getElementById("background-image");
+
+        if (window.innerWidth < 768) {
+          // Adjust the breakpoint as needed
+          video.style.display = "none";
+          image.style.display = "block";
+        } else {
+          video.style.display = "block";
+          image.style.display = "none";
+        }
+      }
+
+      handleViewportChange();
+      window.addEventListener("resize", handleViewportChange);
     </script>
 
     <div class="video-container">
-      <video autoplay loop muted>
+      <div id="background-video">
+        <video autoplay loop muted>
         <source
           src="Assets/pexels-rene-strgar-18775910 (Original).mp4"
           type="video/mp4"
         />
+      </div>
+      
       </video>
+      <div id="background-image">
+        <img src="Assets/Screenshot 2023-11-16 205623.png" alt="image" />
+      </div>
     </div>
 
     <section>
