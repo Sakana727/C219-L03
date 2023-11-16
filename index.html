@@ -2,26 +2,113 @@
 <html>
   <head>
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="navbar.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
-    <ul class="navbar">
+    <!-- This is the Hamburger Menu -->
+    <nav role="navigation" id="hamburger-menu">
+      <div id="menuToggle">
+        <input type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+        <ul id="menu">
+          <a href="index.html"><li>Home</li></a>
+          <a href="about.html"><li>About</li></a>
+          <a href="contact.html"><li>Contact</li></a>
+          <li class="dropdown">
+            <a onclick="dropdownonclick()" class="dropbtn">>Tour Packages ▽</a>
+            <div id="myDropdown" class="dropdown-content">
+              <a href="tour1.html">Tour 1</a>
+              <a href="tour2.html">Tour 2</a>
+              <a href="tour3.html">Tour 3</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <script>
+      function toggleNavbar() {
+        const horizontalNavbar = document.getElementById("horizontal-navbar");
+        const hamburgerMenu = document.getElementById("hamburger-menu");
+
+        if (window.innerWidth <= 600) {
+          horizontalNavbar.style.display = "none";
+          hamburgerMenu.style.display = "block";
+        } else {
+          horizontalNavbar.style.display = "flex";
+          hamburgerMenu.style.display = "none";
+        }
+      }
+
+      toggleNavbar();
+
+      window.addEventListener("resize", toggleNavbar);
+    </script>
+
+    <script>
+      /* When the user clicks on the button, 
+      toggle between hiding and showing the dropdown content */
+      function dropdownonclick() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+
+      // Close the dropdown if the user clicks outside of it
+      window.onclick = function (event) {
+        if (!event.target.matches(".dropbtn")) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains("show")) {
+              openDropdown.classList.remove("show");
+            }
+          }
+        }
+      };
+    </script>
+
+    <!-- This is the Normal landscape module Menu -->
+    <ul class="navbar" id="horizontal-navbar">
       <li class="logo">
         <a href="#logo"
           ><img src="Assets/Logo_A1.svg" alt="Your Logo" width="50" height="50"
         /></a>
       </li>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
       <li class="dropdown">
-        <a href="index.html">Tour Packages</a>
+        <a href="index.html">Tour Packages ▽</a>
         <div class="dropdown-content">
           <a href="tour1.html">Tour 1</a>
           <a href="tour2.html">Tour 2</a>
           <a href="tour3.html">Tour 3</a>
         </div>
       </li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="index.html" class="active">Home</a></li>
     </ul>
+
+    <script>
+      function toggleNavbar() {
+        const horizontalNavbar = document.getElementById("horizontal-navbar");
+        const hamburgerMenu = document.getElementById("hamburger-menu");
+
+        if (window.innerWidth <= 600) {
+          horizontalNavbar.style.display = "none";
+          hamburgerMenu.style.display = "block";
+        } else {
+          horizontalNavbar.style.display = "flex";
+          hamburgerMenu.style.display = "none";
+        }
+      }
+
+      toggleNavbar();
+
+      window.addEventListener("resize", toggleNavbar);
+    </script>
+
     <div class="video-container">
       <video autoplay loop muted>
         <source
@@ -37,6 +124,7 @@
           src="Assets/pexels-michael-block-3225531.jpg"
           alt="Article 1 Image"
         />
+        <br /><br />
         <h2>A Relaxing Retreat by the Pool</h2>
         <p>
           Imagine the perfect getaway where relaxation meets serenity. In this
@@ -52,6 +140,7 @@
           src="Assets/pexels-quang-nguyen-vinh-2132126.jpg"
           alt="Article 2 Image"
         />
+        <br /><br />
         <h2>Exploring the Great Outdoors</h2>
         <p>
           If you're a nature enthusiast, you're in for a treat. In this article,
@@ -67,6 +156,7 @@
           src="Assets/pexels-taryn-elliott-3889987.jpg"
           alt="Article 3 Image"
         />
+        <br /><br />
         <h2>Safari Adventure: Following the Wind</h2>
         <p>
           Embark on a thrilling safari adventure like no other. In the heart of

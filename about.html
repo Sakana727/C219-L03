@@ -2,27 +2,72 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="about.css" />
+    <link rel="stylesheet" href="navbar.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Your Website Name</title>
   </head>
   <body>
-    <ul class="navbar">
-      <li class="logo">
-        <a href="#logo"
-          ><img src="Assets/Logo_A1.svg" alt="Your Logo" width="50" height="50"
-        /></a>
-      </li>
-      <li class="dropdown">
-        <a href="index.html">Tour Packages</a>
-        <div class="dropdown-content">
-          <a href="tour1.html">Tour 1</a>
-          <a href="tour2.html">Tour 2</a>
-          <a href="tour3.html">Tour 3</a>
-        </div>
-      </li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="about.html" class="active">About</a></li>
-      <li><a href="index.html">Home</a></li>
-    </ul>
+    <!-- This is the Hamburger Menu -->
+    <nav role="navigation" id="hamburger-menu">
+      <div id="menuToggle">
+        <input type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+        <ul id="menu">
+          <a href="index.html"><li>Home</li></a>
+          <a href="about.html"><li>About</li></a>
+          <a href="contact.html"><li>Contact</li></a>
+          <li class="dropdown">
+            <a onclick="dropdownonclick()" class="dropbtn">>Tour Packages ▽</a>
+            <div id="myDropdown" class="dropdown-content">
+              <a href="tour1.html">Tour 1</a>
+              <a href="tour2.html">Tour 2</a>
+              <a href="tour3.html">Tour 3</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+  <!-- This is the Normal landscape module Menu -->
+  <ul class="navbar" id="horizontal-navbar">
+    <li class="logo">
+      <a href="#logo"
+        ><img src="Assets/Logo_A1.svg" alt="Your Logo" width="50" height="50"
+      /></a>
+    </li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li class="dropdown">
+      <a href="index.html">Tour Packages ▽</a>
+      <div class="dropdown-content">
+        <a href="tour1.html">Tour 1</a>
+        <a href="tour2.html">Tour 2</a>
+        <a href="tour3.html">Tour 3</a>
+      </div>
+    </li>
+  </ul>
+
+  <script>
+    function toggleNavbar() {
+      const horizontalNavbar = document.getElementById("horizontal-navbar");
+      const hamburgerMenu = document.getElementById("hamburger-menu");
+
+      if (window.innerWidth <= 600) {
+        horizontalNavbar.style.display = "none";
+        hamburgerMenu.style.display = "block";
+      } else {
+        horizontalNavbar.style.display = "flex";
+        hamburgerMenu.style.display = "none";
+      }
+    }
+
+    toggleNavbar();
+
+    window.addEventListener("resize", toggleNavbar);
+  </script>
 
     <section class="about-section">
       <div class="about-content">
